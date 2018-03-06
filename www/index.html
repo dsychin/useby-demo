@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
         crossorigin="anonymous">
+    <script>
+        function newItem() {
+            window.location = "myFridge.html";
+        }
+    </script>
     <style>
         header {
             font-size: 30px;
@@ -74,7 +79,7 @@
         </div>
     </header>
     <main>
-        <div class="btn" id="btn-1">
+        <div class="btn" id="btn-1" onclick="newItem()">
             <div class="btn-icon">
                 <i class="fas fa-barcode"></i>
             </div>
