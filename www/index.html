@@ -18,7 +18,7 @@
     <style>
         header {
             font-size: 30px;
-            background-color: #dbdbdb;
+            background-color: white;
             color: rgb(46, 46, 46);
         }
 
@@ -43,7 +43,6 @@
             text-align: center;
             height: 33.3%;
             width: 100%;
-            padding-top: 30px;
         }
 
         .btn-icon img {
@@ -55,18 +54,29 @@
         }
 
         #btn-1 {
-            background-color: #00aeff;
+            background-color: #00abf2;
             color: black;
         }
 
         #btn-2 {
-            background-color: #ffa600;
+            background-color: #ffb97a;
             color: black;
         }
 
         #btn-3 {
-            background-color: #14ec00;
+            background-color: #62ffa7;
             color: black;
+        }
+
+        .outer {
+            display: table;
+            height: 100%;
+            width: 100%;
+        }
+
+        .inner {
+            display: table-cell;
+            vertical-align: middle;
         }
 
         * {
@@ -84,22 +94,35 @@
     </header>
     <main>
         <div class="btn" id="btn-1" onclick="newItem()">
-            <div class="btn-icon">
-                <img src="img/fridge.svg" alt="Fridge">
+            <div class="outer">
+                <div class="inner">
+                    <div class="btn-icon">
+                        <img src="img/fridge.svg" alt="Fridge">
+                    </div>
+                    <div class="btn-text">My Fridge</div>
+                </div>
             </div>
-            <div class="btn-text">My Fridge</div>
         </div>
         <div class="btn" id="btn-2">
-            <div class="btn-icon">
-                <img src="img/book.svg" alt="Book">
+            <div class="outer">
+                <div class="inner">
+                    <div class="btn-icon">
+                        <img src="img/book.svg" alt="Book">
+                    </div>
+                    <div class="btn-text">My Recipes</div>
+                </div>
             </div>
-            <div class="btn-text">My Recipes</div>
         </div>
         <div class="btn" id="btn-3">
-            <div class="btn-icon">
-                <img src="img/shopping-basket.svg" alt="Shopping Basket">
+            <div class="outer">
+                <div class="inner">
+                    <div class="btn-icon">
+                        <img src="img/shopping-basket.svg" alt="Shopping Basket">
+                    </div>
+                    <div class="btn-text">Shopping List</div>
+                </div>
             </div>
-            <div class="btn-text">Shopping List</div>
+
         </div>
     </main>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
