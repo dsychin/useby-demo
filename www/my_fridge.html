@@ -11,16 +11,40 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
         crossorigin="anonymous">
     <script>
+        function myFridge() {
+            window.location = "my_fridge.html";
+        }
+
+        function home() {
+            window.location = "index.html";
+        }
+
+        function myRecipes() {
+            window.location = "my_recipes.html";
+        }
+
+        function shoppingList() {
+            window.location = "shopping_list.html";
+        }
+
+        function toggleNav() {
+            if (document.getElementById("nav").classList.contains('close-nav')) {
+                document.getElementById("nav").classList.remove('close-nav');
+            } else {
+                document.getElementById("nav").classList.add('close-nav');
+            }
+        }
     </script>
     <style>
         header {
             font-size: 32px;
             background-color: #00b0f9;
             color: rgb(46, 46, 46);
+            border-bottom: solid grey 1px;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 99;
         }
 
         .brand {
@@ -32,6 +56,35 @@
             margin: 13px 5px;
             position: absolute;
             right: 10px;
+        }
+
+        nav {
+            padding-top: 10px;
+            padding-bottom: 15px;
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            top: 61px;
+            z-index: 100;
+        }
+
+        .selected {
+            background-color: rgb(231, 231, 231);
+        }
+
+        .close-nav {
+            display: none;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
         }
 
         main {
@@ -134,9 +187,25 @@
 
 <body>
     <header>
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" onclick="toggleNav()"></i>
         <div class="brand">My Fridge</div>
     </header>
+    <nav id="nav" class="close-nav">
+        <ul>
+            <li onclick="home()">
+                Home
+            </li>
+            <li class="selected" onclick="myFridge()">
+                My Fridge
+            </li>
+            <li onclick="myRecipes()">
+                My Recipes
+            </li>
+            <li onclick="shoppingList()">
+                Shopping List
+            </li>
+        </ul>
+    </nav>
     <main>
         <div class="item">
             <div class="wrapper">
@@ -185,21 +254,21 @@
         <div class="item">
             <div class="wrapper">
                 <div class="thumbnail">
-                    <img src="img/cheese.jpg" alt="Cheese">
+                    <img src="img/semi-skim-milk.jpg" alt="Semi skimmed milk">
                 </div>
                 <div class="name">
-                    Cathedral City Mature Cheddar Cheese
+                    Tesco British Semi Skimmed Milk
                 </div>
                 <div class="qty">
                     <i class="fas fa-balance-scale"></i>
                     <span class="qty-text">
-                        550g
+                        4 Pints
                     </span>
                 </div>
                 <div class="date">
                     <i class="far fa-calendar-alt"></i>
                     <span class="date-text">
-                        28/03/2018
+                        16/03/2018
                     </span>
                 </div>
             </div>
