@@ -7,19 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Use By</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
         crossorigin="anonymous">
     <script>
-        function newItem() {
+        function myFridge() {
             window.location = "my_fridge.html";
+        }
+
+        function toggleNav() {
+            if (document.getElementById("nav").classList.contains('close-nav')) {
+                document.getElementById("nav").classList.remove('close-nav');
+            } else {
+                document.getElementById("nav").classList.add('close-nav');
+            }
         }
     </script>
     <style>
         header {
-            font-size: 30px;
+            font-size: 32px;
             background-color: white;
             color: rgb(46, 46, 46);
+            border-bottom: solid grey 1px;
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
 
         .brand {
@@ -33,10 +45,33 @@
             right: 10px;
         }
 
+        nav {
+            padding-top: 10px;
+            padding-bottom: 15px;
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            top: 61px;
+        }
+
+        .close-nav {
+            top: -150px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+
         main {
             height: 100vh;
-            padding-top: 56px;
-            margin-top: -56px;
+            padding-top: 60px;
         }
 
         .btn {
@@ -81,7 +116,7 @@
 
         * {
             margin: 0;
-            font-family: 'Lato', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             box-sizing: border-box;
         }
     </style>
@@ -89,11 +124,24 @@
 
 <body>
     <header>
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" onclick="toggleNav()"></i>
         <div class="brand">UseBy</div>
     </header>
+    <nav id="nav" class="close-nav">
+        <ul onclick="myFridge()">
+            <li>
+                My Fridge
+            </li>
+            <li>
+                My Recipes
+            </li>
+            <li>
+                Shopping List
+            </li>
+        </ul>
+    </nav>
     <main>
-        <div class="btn" id="btn-1" onclick="newItem()">
+        <div class="btn" id="btn-1" onclick="myFridge()">
             <div class="outer">
                 <div class="inner">
                     <div class="btn-icon">
