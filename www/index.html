@@ -15,6 +15,18 @@
             window.location = "my_fridge.html";
         }
 
+        function home() {
+            windows.location = "index.html";
+        }
+
+        function myRecipes() {
+            window.location = "my_recipes.html";
+        }
+
+        function shoppingList() {
+            window.location = "shopping_list.html";
+        }
+
         function toggleNav() {
             if (document.getElementById("nav").classList.contains('close-nav')) {
                 document.getElementById("nav").classList.remove('close-nav');
@@ -54,8 +66,12 @@
             top: 61px;
         }
 
+        .selected {
+            background-color: rgb(231, 231, 231);
+        }
+
         .close-nav {
-            top: -150px;
+            display: none;
         }
 
         ul {
@@ -128,14 +144,17 @@
         <div class="brand">UseBy</div>
     </header>
     <nav id="nav" class="close-nav">
-        <ul onclick="myFridge()">
-            <li>
+        <ul>
+            <li class="selected" onclick="home()">
+                Home
+            </li>
+            <li onclick="myFridge()">
                 My Fridge
             </li>
-            <li>
+            <li onclick="myRecipes()">
                 My Recipes
             </li>
-            <li>
+            <li onclick="shoppingList()">
                 Shopping List
             </li>
         </ul>
