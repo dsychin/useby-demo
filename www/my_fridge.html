@@ -117,37 +117,39 @@
 
         .wrapper {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 1fr 1fr;
+            grid-template-columns: repeat(5, 1fr);
         }
 
         .thumbnail {
             grid-column-start: 1;
             grid-row-start: 1;
             grid-row-end: 3;
+            align-self: center
         }
 
         .name {
-            grid-column: 2 / 4;
+            grid-column: 2 / 6;
             font-weight: 900;
-            padding: 20px 5px 0 5px;
+            padding: 5px 5px 0 15px;
         }
 
         .qty,
         .date {
             font-weight: 400;
             color: rgb(63, 63, 63);
-            position: relative;
         }
 
         .qty {
-            left: 10px;
-            top: 20px;
+            padding-left: 10px;
+            padding-top: 20px;
+            grid-column: 2 / 4;
         }
 
         .date {
-            right: 10px;
-            top: 20px;
+            padding-right: 10px;
+            padding-top: 20px;
+            text-align: right;
+            grid-column: 4 / 6;
         }
 
         .date-text,
