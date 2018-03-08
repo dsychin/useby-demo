@@ -34,6 +34,18 @@
                 document.getElementById("nav").classList.add('close-nav');
             }
         }
+
+        function openAddItemMenu() {
+            document.getElementById("overlay").classList.add("overlay-on");
+            document.getElementById("add-item-menu").classList
+                .remove("close-menu");
+        }
+
+        function closeAddItemMenu() {
+            document.getElementById("overlay").classList.remove("overlay-on");
+            document.getElementById("add-item-menu").classList
+                .add("close-menu");
+        }
     </script>
     <style>
         header {
@@ -156,6 +168,48 @@
         .date-text,
         .qty-text {
             margin-left: 2px;
+        }
+
+        #add-item-menu {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: white;
+            z-index: 200;
+            border-top: solid grey 1px;
+            transition: bottom 0.5s;
+        }
+
+        #add-item-menu .title svg {
+            color: #da160c;
+            margin-right: 10px;
+            font-size: 40px;
+        }
+
+        #add-item-menu .title {
+            font-size: 30px;
+            font-weight: 900;
+            padding: 20px 0;
+        }
+
+        #add-item-menu .option {
+            border-top: solid grey 1px;
+            font-size: 30px;
+            padding: 10px 0;
+        }
+
+        .close-menu {
+            bottom: -260px !important;
+        }
+
+        .overlay-on {
+            z-index: 199;
+            background-color: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
         }
 
         footer {
@@ -321,7 +375,27 @@
             </div>
         </div>
     </main>
-    <footer>
+    <section id="add-item-menu" class="close-menu">
+        <div class="title">
+            <i class="fas fa-times-circle" onclick="closeAddItemMenu()"></i>
+            <span>Add New Item</span>
+        </div>
+        <div class="option">
+            <i class="fas fa-list"></i>
+            Scan Receipt
+        </div>
+        <div class="option">
+            <i class="fas fa-barcode"></i>
+            Scan Barcode
+        </div>
+        <div class="option">
+            <i class="fas fa-pencil-alt"></i>
+            Manual Input
+        </div>
+    </section>
+    <div id="overlay">
+    </div>
+    <footer onclick="openAddItemMenu()">
         <div class="outer">
             <div class="inner">
                 <div class="content">
