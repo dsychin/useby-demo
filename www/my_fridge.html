@@ -39,12 +39,15 @@
             document.getElementById("overlay").classList.add("overlay-on");
             document.getElementById("add-item-menu").classList
                 .remove("close-menu");
+            document.getElementById("overlay")
+                .setAttribute("onclick", "closeAddItemMenu()");
         }
 
         function closeAddItemMenu() {
             document.getElementById("overlay").classList.remove("overlay-on");
             document.getElementById("add-item-menu").classList
                 .add("close-menu");
+            document.getElementById("overlay").removeAttribute("onclick");
         }
     </script>
     <style>
@@ -211,6 +214,7 @@
             top: 0;
             height: 100vh;
             width: 100vw;
+            transition: background-color 0.5s;
         }
 
         footer {
