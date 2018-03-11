@@ -29,6 +29,10 @@
             window.location = "shopping_list.html";
         }
 
+        function preferences() {
+            window.location = "preferences.html"
+        }
+
         function toggleNav() {
             if (document.getElementById("nav").classList.contains('close-nav')) {
                 document.getElementById("nav").classList.remove('close-nav');
@@ -168,6 +172,9 @@
             </li>
             <li onclick="shoppingList()">
                 Shopping List
+            </li>
+            <li onclick="preferences()">
+                Preferences
             </li>
         </ul>
     </nav>
