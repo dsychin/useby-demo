@@ -8,8 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Use By</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
-        crossorigin="anonymous">
     <script>
         function myFridge() {
             window.location = "my_fridge.html";
@@ -52,6 +50,10 @@
 
         function scanBarcode() {
             window.location = "scan_barcode.html";
+        }
+
+        function addItemInfo() {
+            window.location = "add_item_info.html"
         }
     </script>
     <style>
@@ -416,7 +418,7 @@
             <i class="fas fa-barcode"></i>
             Scan Barcode
         </div>
-        <div class="option">
+        <div class="option" onclick="addItemInfo()">
             <i class="fas fa-pencil-alt"></i>
             Manual Input
         </div>
