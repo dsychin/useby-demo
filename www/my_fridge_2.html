@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Use By</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <script>
+        function myFridge() {
+            window.location = "my_fridge.html";
+        }
+
+        function home() {
+            window.location = "index.html";
+        }
+
+        function myRecipes() {
+            window.location = "my_recipes.html";
+        }
+
+        function shoppingList() {
+            window.location = "shopping_list.html";
+        }
+
+        function toggleNav() {
+            if (document.getElementById("nav").classList.contains('close-nav')) {
+                document.getElementById("nav").classList.remove('close-nav');
+            } else {
+                document.getElementById("nav").classList.add('close-nav');
+            }
+        }
+
+        function openAddItemMenu() {
+            document.getElementById("overlay").classList.add("overlay-on");
+            document.getElementById("add-item-menu").classList
+                .remove("close-menu");
+            document.getElementById("overlay")
+                .setAttribute("onclick", "closeAddItemMenu()");
+        }
+
+        function closeAddItemMenu() {
+            document.getElementById("overlay").classList.remove("overlay-on");
+            document.getElementById("add-item-menu").classList
+                .add("close-menu");
+            document.getElementById("overlay").removeAttribute("onclick");
+        }
+
+        function scanBarcode() {
+            window.location = "scan_barcode.html";
+        }
+
+        function addItemInfo() {
+            window.location = "add_item_info.html"
+        }
+    </script>
+    <style>
+        header {
+            font-size: 32px;
+            background-color: #00b0f9;
+            color: rgb(46, 46, 46);
+            border-bottom: solid grey 1px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 99;
+        }
+
+        .brand {
+            text-align: center;
+            padding: 10px;
+        }
+
+        header svg {
+            margin: 14px 5px;
+            position: absolute;
+            right: 10px;
+        }
+
+        nav {
+            padding-top: 10px;
+            padding-bottom: 15px;
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            top: 61px;
+            z-index: 98;
+            border-bottom: solid grey 1px;
+            transition: top 0.5s;
+        }
+
+        .selected {
+            background-color: rgb(231, 231, 231);
+        }
+
+        .close-nav {
+            top: -210px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        main {
+            padding-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .outer {
+            display: table;
+            height: 100%;
+            width: 100%;
+        }
+
+        .inner {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .item {
+            padding: 10px;
+        }
+
+        .thumbnail img {
+            width: 100%;
+        }
+
+        .item {
+            border-bottom: solid grey 1px;
+        }
+
+        .wrapper {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: (1fr 1fr 1fr 1fr 1fr);
+            grid-template-columns: repeat(5, 1fr);
+            -ms-grid-rows: (1fr 1fr);
+            grid-template-rows: (1fr 1fr);
+        }
+
+        .thumbnail {
+            -ms-grid-column: 1;
+            grid-column: 1;
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 2;
+            grid-row: 1 / 3;
+            -ms-grid-row-align: center;
+            align-self: center
+        }
+
+        .name {
+            -ms-grid-column: 2;
+            -ms-grid-column-span: 4;
+            grid-column: 2 / 6;
+            font-weight: 900;
+            padding: 5px 5px 0 15px;
+        }
+
+        .qty,
+        .date {
+            font-weight: 400;
+            color: rgb(63, 63, 63);
+        }
+
+        .qty {
+            padding-left: 10px;
+            padding-top: 20px;
+            -ms-grid-column: 2;
+            -ms-grid-column-span: 2;
+            grid-column: 2 / 4;
+            -ms-grid-row: 2;
+            grid-row: 2;
+        }
+
+        .date {
+            padding-right: 10px;
+            padding-top: 20px;
+            text-align: right;
+            -ms-grid-column: 4;
+            -ms-grid-column-span: 2;
+            grid-column: 4 / 6;
+            -ms-grid-row: 2;
+            grid-row: 2;
+        }
+
+        .date-text,
+        .qty-text {
+            margin-left: 2px;
+        }
+
+        #add-item-menu {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: white;
+            z-index: 200;
+            border-top: solid grey 1px;
+            transition: bottom 0.5s;
+        }
+
+        #add-item-menu .title svg {
+            color: #da160c;
+            margin-right: 10px;
+            font-size: 40px;
+        }
+
+        #add-item-menu .title {
+            font-size: 30px;
+            font-weight: 900;
+            padding: 10px 0;
+            background-color: rgba(0, 174, 249, 0.3);
+            color: rgba(0, 0, 0, 0.678);
+        }
+
+        #add-item-menu .option {
+            border-top: solid grey 1px;
+            font-size: 30px;
+            padding: 20px 0;
+        }
+
+        .close-menu {
+            bottom: -300px !important;
+        }
+
+        .overlay-on {
+            z-index: 199;
+            background-color: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            transition: background-color 0.5s;
+        }
+
+        footer {
+            height: 60px;
+            border: black solid 1px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            background-color: white;
+        }
+
+        footer svg {
+            color: #29be49;
+        }
+
+        footer .content {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        footer .newItemText {
+            padding-left: 10px;
+        }
+
+        * {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <i class="fas fa-bars" onclick="toggleNav()"></i>
+        <div class="brand">My Fridge</div>
+    </header>
+    <nav id="nav" class="close-nav">
+        <ul>
+            <li onclick="home()">
+                Home
+            </li>
+            <li class="selected" onclick="myFridge()">
+                My Fridge
+            </li>
+            <li onclick="myRecipes()">
+                My Recipes
+            </li>
+            <li onclick="shoppingList()">
+                Shopping List
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="item">
+            <div class="wrapper">
+                <div class="thumbnail">
+                    <img src="img/cheese.jpg" alt="Cheese">
+                </div>
+                <div class="name">
+                    Cathedral City Mature Cheddar Cheese
+                </div>
+                <div class="qty">
+                    <i class="fas fa-balance-scale"></i>
+                    <span class="qty-text">
+                        550g
+                    </span>
+                </div>
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span class="date-text">
+                        28/03/2018
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="wrapper">
+                <div class="thumbnail">
+                    <img src="img/mushroom.jpg" alt="Mushroom">
+                </div>
+                <div class="name">
+                    Tesco Baby Button Mushrooms
+                </div>
+                <div class="qty">
+                    <i class="fas fa-balance-scale"></i>
+                    <span class="qty-text">
+                        200g
+                    </span>
+                </div>
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span class="date-text">
+                        15/03/2018
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="wrapper">
+                <div class="thumbnail">
+                    <img src="img/semi-skim-milk.jpg" alt="Semi skimmed milk">
+                </div>
+                <div class="name">
+                    Tesco British Semi Skimmed Milk
+                </div>
+                <div class="qty">
+                    <i class="fas fa-balance-scale"></i>
+                    <span class="qty-text">
+                        4 Pints
+                    </span>
+                </div>
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span class="date-text">
+                        16/03/2018
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="wrapper">
+                <div class="thumbnail">
+                    <img src="img/cheese.jpg" alt="Cheese">
+                </div>
+                <div class="name">
+                    Cathedral City Mature Cheddar Cheese
+                </div>
+                <div class="qty">
+                    <i class="fas fa-balance-scale"></i>
+                    <span class="qty-text">
+                        550g
+                    </span>
+                </div>
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span class="date-text">
+                        28/03/2018
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="wrapper">
+                <div class="thumbnail">
+                    <img src="img/cheese.jpg" alt="Cheese">
+                </div>
+                <div class="name">
+                    Cathedral City Mature Cheddar Cheese
+                </div>
+                <div class="qty">
+                    <i class="fas fa-balance-scale"></i>
+                    <span class="qty-text">
+                        550g
+                    </span>
+                </div>
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span class="date-text">
+                        28/03/2018
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section id="add-item-menu" class="close-menu">
+        <div class="title">
+            <i class="fas fa-times-circle" onclick="closeAddItemMenu()"></i>
+            <span>Add New Item</span>
+        </div>
+        <div class="option">
+            <i class="fas fa-list"></i>
+            Scan Receipt
+        </div>
+        <div class="option" onclick="scanBarcode()">
+            <i class="fas fa-barcode"></i>
+            Scan Barcode
+        </div>
+        <div class="option" onclick="addItemInfo()">
+            <i class="fas fa-pencil-alt"></i>
+            Manual Input
+        </div>
+    </section>
+    <div id="overlay">
+    </div>
+    <footer onclick="openAddItemMenu()">
+        <div class="outer">
+            <div class="inner">
+                <div class="content">
+                    <i class="fas fa-plus-circle"></i>
+                    <span class="newItemText">Add New Item</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</body>
+
+</html>
