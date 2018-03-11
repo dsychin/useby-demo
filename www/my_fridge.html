@@ -49,6 +49,10 @@
                 .add("close-menu");
             document.getElementById("overlay").removeAttribute("onclick");
         }
+
+        function scanBarcode() {
+            window.location = "scan_barcode.html";
+        }
     </script>
     <style>
         header {
@@ -408,7 +412,7 @@
             <i class="fas fa-list"></i>
             Scan Receipt
         </div>
-        <div class="option">
+        <div class="option" onclick="scanBarcode()">
             <i class="fas fa-barcode"></i>
             Scan Barcode
         </div>

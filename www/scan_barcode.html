@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Use By</title>
+    <script>
+        function nextPage() {
+            window.location = "add_item_info.html";
+        }
+    </script>
+    <style>
+        .barcode {
+            height: 100vh;
+            width: 100%;
+            background-image: url('img/barcode.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="barcode" onclick="nextPage()">
+    </div>
+</body>
+
+</html>
