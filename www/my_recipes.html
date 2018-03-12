@@ -8,8 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Use By</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
     <script>
         function myFridge() {
             window.location = "my_fridge.html";
@@ -50,18 +49,18 @@
             top: 0;
             z-index: 99;
         }
-
+        
         .brand {
             text-align: center;
             padding: 10px;
         }
-
+        
         header svg {
             margin: 14px 5px;
             position: absolute;
             right: 10px;
         }
-
+        
         nav {
             padding-top: 10px;
             padding-bottom: 15px;
@@ -73,42 +72,42 @@
             border-bottom: solid grey 1px;
             transition: top 0.5s;
         }
-
+        
         .selected {
             background-color: rgb(231, 231, 231);
         }
-
+        
         .close-nav {
             top: -210px;
         }
-
+        
         ul {
             list-style-type: none;
             padding: 0;
         }
-
+        
         li {
             text-align: center;
             padding: 10px;
             font-size: 20px;
         }
-
+        
         main {
             padding-top: 60px;
             margin-bottom: 60px;
         }
-
+        
         .outer {
             display: table;
             height: 100%;
             width: 100%;
         }
-
+        
         .inner {
             display: table-cell;
             vertical-align: middle;
         }
-
+        
         footer {
             height: 60px;
             border: black solid 1px;
@@ -117,24 +116,61 @@
             bottom: 0;
             background-color: white;
         }
-
+        
         footer svg {
             color: #29be49;
         }
-
+        
         footer .content {
             text-align: center;
             font-size: 30px;
         }
-
+        
         footer .newItemText {
             padding-left: 10px;
         }
-
+        
         * {
             margin: 0;
             font-family: 'Quicksand', sans-serif;
             box-sizing: border-box;
+        }
+        
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+        
+        .text-wrapper {
+            display: grid;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            font-size: 30px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        .recipe-item {
+            height: 50vw;
+            color: white;
+            border: solid black 1px;
+        }
+        
+        #item-1 {
+            background: url('img/ChilliConCarne.jpg');
+            background-size: cover;
+        }
+        
+        #item-2 {
+            background: url('img/thai-red-curry.jpg');
+            background-size: cover;
+        }
+        
+        .title {
+            font-size: 30px;
+            padding: 10px;
         }
     </style>
 </head>
@@ -164,7 +200,36 @@
         </ul>
     </nav>
     <main>
-
+        <div class="title">
+            Saved
+        </div>
+        <div class="wrapper">
+            <div class="recipe-item" id="item-1">
+                <div class="text-wrapper">
+                    Chilli Con Carne
+                </div>
+            </div>
+            <div class="recipe-item" id="item-2">
+                <div class="text-wrapper">
+                    Thai Red Curry
+                </div>
+            </div>
+        </div>
+        <div class="title">
+            Suggestions
+        </div>
+        <div class="wrapper">
+            <div class="recipe-item" id="item-3">
+                <div class="text-wrapper">
+                    Eggs and Avacado
+                </div>
+            </div>
+            <div class="recipe-item" id="item-4">
+                <div class="text-wrapper">
+                    Salmon and Rice
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="outer">
