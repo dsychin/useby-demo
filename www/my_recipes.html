@@ -8,14 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Use By</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
     <script>
         function myFridge() {
             window.location = "my_fridge.html";
         }
 
         function home() {
-            window.location = "index.html";
+            window.location = "home.html";
         }
 
         function myRecipes() {
@@ -49,18 +50,18 @@
             top: 0;
             z-index: 99;
         }
-        
+
         .brand {
             text-align: center;
             padding: 10px;
         }
-        
+
         header svg {
             margin: 14px 5px;
             position: absolute;
             right: 10px;
         }
-        
+
         nav {
             padding-top: 10px;
             padding-bottom: 15px;
@@ -72,42 +73,42 @@
             border-bottom: solid grey 1px;
             transition: top 0.5s;
         }
-        
+
         .selected {
             background-color: rgb(231, 231, 231);
         }
-        
+
         .close-nav {
             top: -210px;
         }
-        
+
         ul {
             list-style-type: none;
             padding: 0;
         }
-        
+
         li {
             text-align: center;
             padding: 10px;
             font-size: 20px;
         }
-        
+
         main {
             padding-top: 60px;
             margin-bottom: 60px;
         }
-        
+
         .outer {
             display: table;
             height: 100%;
             width: 100%;
         }
-        
+
         .inner {
             display: table-cell;
             vertical-align: middle;
         }
-        
+
         footer {
             height: 60px;
             border: black solid 1px;
@@ -116,26 +117,26 @@
             bottom: 0;
             background-color: white;
         }
-        
+
         footer svg {
             color: #29be49;
         }
-        
+
         footer .content {
             text-align: center;
             font-size: 30px;
         }
-        
+
         footer .newItemText {
             padding-left: 10px;
         }
-        
+
         * {
             margin: 0;
             font-family: 'Quicksand', sans-serif;
             box-sizing: border-box;
         }
-        
+
         .wrapper {
             display: -ms-grid;
             display: grid;
@@ -144,7 +145,7 @@
             -ms-grid-rows: 1fr;
             grid-template-rows: 1fr;
         }
-        
+
         .text-wrapper {
             display: -ms-grid;
             display: grid;
@@ -155,46 +156,46 @@
             padding: 10px;
             background-color: rgba(0, 0, 0, 0.3);
         }
-        
+
         .recipe-item {
             height: 170px;
             color: white;
             border: solid black 1px;
         }
-        
+
         #item-1 {
             background: url('img/ChilliConCarne.jpg');
             background-size: cover;
             grid-column: 1;
             -ms-grid-column: 1;
         }
-        
+
         #item-2 {
             background: url('img/thai-red-curry.jpg');
             background-size: cover;
             grid-column: 2;
             -ms-grid-column: 2;
         }
-        
+
         #item-3 {
             background: url('img/avocado.jpg');
             background-size: cover;
             grid-column: 1;
             -ms-grid-column: 1;
         }
-        
+
         #item-4 {
             background: url('img/salmon-rice.jpg');
             background-size: cover;
             grid-column: 2;
             -ms-grid-column: 2;
         }
-        
+
         .title {
             font-size: 30px;
             padding: 10px;
         }
-        
+
         .save-icon {
             position: relative;
             height: 0;
@@ -202,7 +203,7 @@
             text-align: right;
             font-size: 25px;
         }
-        
+
         .save-icon svg {
             margin: 138px 5px;
         }

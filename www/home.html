@@ -8,8 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Use By</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
         crossorigin="anonymous">
     <script>
@@ -18,7 +16,7 @@
         }
 
         function home() {
-            window.location = "home.html";
+            window.location = "index.html";
         }
 
         function myRecipes() {
@@ -40,20 +38,16 @@
                 document.getElementById("nav").classList.add('close-nav');
             }
         }
-
-        function newFridge() {
-            window.location = "my_fridge_2.html";
-        }
     </script>
     <style>
         header {
             font-size: 32px;
-            background-color: #00b0f9;
+            background-color: white;
             color: rgb(46, 46, 46);
             border-bottom: solid grey 1px;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
             z-index: 99;
         }
 
@@ -100,8 +94,38 @@
         }
 
         main {
+            height: 100vh;
             padding-top: 60px;
-            margin-bottom: 60px;
+        }
+
+        .btn {
+            text-align: center;
+            height: 33.333%;
+            width: 100%;
+        }
+
+        .btn-icon img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .btn-text {
+            font-size: 30px;
+        }
+
+        #btn-1 {
+            background-color: #00abf2;
+            color: black;
+        }
+
+        #btn-2 {
+            background-color: #ffb97a;
+            color: black;
+        }
+
+        #btn-3 {
+            background-color: #62ffa7;
+            color: black;
         }
 
         .outer {
@@ -115,41 +139,10 @@
             vertical-align: middle;
         }
 
-        footer {
-            height: 60px;
-            border: black solid 1px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            background-color: white;
-        }
-
-        footer svg {
-            color: #29be49;
-        }
-
-        footer .content {
-            text-align: center;
-            font-size: 30px;
-        }
-
-        footer .newItemText {
-            padding-left: 10px;
-        }
-
         * {
             margin: 0;
             font-family: 'Quicksand', sans-serif;
             box-sizing: border-box;
-        }
-
-        form {
-            margin: 15px 10px;
-        }
-
-        label,
-        input {
-            font-size: 18px !important;
         }
     </style>
 </head>
@@ -157,11 +150,11 @@
 <body>
     <header>
         <i class="fas fa-bars" onclick="toggleNav()"></i>
-        <div class="brand">Add New Item</div>
+        <div class="brand">UseBy</div>
     </header>
     <nav id="nav" class="close-nav">
         <ul>
-            <li onclick="home()">
+            <li class="selected" onclick="home()">
                 Home
             </li>
             <li onclick="myFridge()">
@@ -179,39 +172,38 @@
         </ul>
     </nav>
     <main>
-        <form>
-            <div class="form-group">
-                <label for="Name">Name</label>
-                <input type="text" class="form-control" value="Tesco Baby Spinach">
-            </div>
-            <div class="form-group">
-                <label for="qty">Quantity</label>
-                <input type="number" class="form-control" value="240">
-                <select name="unit" id="unit" class="form-control">
-                    <option value="grams" selected>grams</option>
-                    <option value="kg">kg</option>
-                    <option value="ml">ml</option>
-                    <option value="L">L</option>
-                    <option value="pints">pints</option>
-                    <option value="Others">Others</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="date">Use By Date</label>
-                <input type="date" class="form-control" value="2018-03-15">
-            </div>
-        </form>
-    </main>
-    <footer>
-        <div class="outer" onclick="newFridge()">
-            <div class="inner">
-                <div class="content">
-                    <i class="fas fa-plus-circle"></i>
-                    <span class="newItemText">Save</span>
+        <div class="btn" id="btn-1" onclick="myFridge()">
+            <div class="outer">
+                <div class="inner">
+                    <div class="btn-icon">
+                        <img src="img/fridge.svg" alt="Fridge">
+                    </div>
+                    <div class="btn-text">My Fridge</div>
                 </div>
             </div>
         </div>
-    </footer>
+        <div class="btn" id="btn-2" onclick="myRecipes()">
+            <div class="outer">
+                <div class="inner">
+                    <div class="btn-icon">
+                        <img src="img/book.svg" alt="Book">
+                    </div>
+                    <div class="btn-text">My Recipes</div>
+                </div>
+            </div>
+        </div>
+        <div class="btn" id="btn-3" onclick="shoppingList()">
+            <div class="outer">
+                <div class="inner">
+                    <div class="btn-icon">
+                        <img src="img/shopping-basket.svg" alt="Shopping Basket">
+                    </div>
+                    <div class="btn-text">Shopping List</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
 

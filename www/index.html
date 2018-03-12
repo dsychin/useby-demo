@@ -1,131 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Use By</title>
+    <title>UseBy</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
-        crossorigin="anonymous">
     <script>
-        function myFridge() {
-            window.location = "my_fridge.html";
-        }
-
-        function home() {
-            window.location = "index.html";
-        }
-
-        function myRecipes() {
-            window.location = "my_recipes.html";
-        }
-
-        function shoppingList() {
-            window.location = "shopping_list.html";
-        }
-
-        function preferences() {
-            window.location = "preferences.html"
-        }
-
-        function toggleNav() {
-            if (document.getElementById("nav").classList.contains('close-nav')) {
-                document.getElementById("nav").classList.remove('close-nav');
-            } else {
-                document.getElementById("nav").classList.add('close-nav');
-            }
+        function toHome() {
+            window.location = "home.html";
         }
     </script>
     <style>
-        header {
-            font-size: 32px;
-            background-color: white;
-            color: rgb(46, 46, 46);
-            border-bottom: solid grey 1px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 99;
-        }
-
-        .brand {
-            text-align: center;
-            padding: 10px;
-        }
-
-        header svg {
-            margin: 14px 5px;
-            position: absolute;
-            right: 10px;
-        }
-
-        nav {
-            padding-top: 10px;
-            padding-bottom: 15px;
-            position: fixed;
-            background-color: white;
-            width: 100%;
-            top: 61px;
-            z-index: 98;
-            border-bottom: solid grey 1px;
-            transition: top 0.5s;
-        }
-
-        .selected {
-            background-color: rgb(231, 231, 231);
-        }
-
-        .close-nav {
-            top: -210px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            text-align: center;
-            padding: 10px;
-            font-size: 20px;
-        }
-
-        main {
+        .background {
+            background: #00b0f9;
             height: 100vh;
-            padding-top: 60px;
         }
 
-        .btn {
+        .title {
             text-align: center;
-            height: 33.333%;
-            width: 100%;
+            color: white;
+            font-size: 70px;
+            margin-top: 50px;
         }
 
-        .btn-icon img {
-            width: 100px;
-            height: 100px;
+        img {
+            width: 40%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .btn-text {
-            font-size: 30px;
-        }
-
-        #btn-1 {
-            background-color: #00abf2;
-            color: black;
-        }
-
-        #btn-2 {
-            background-color: #ffb97a;
-            color: black;
-        }
-
-        #btn-3 {
-            background-color: #62ffa7;
-            color: black;
+        .wrapper {
+            display: grid;
+            align-items: center;
         }
 
         .outer {
@@ -148,63 +57,18 @@
 </head>
 
 <body>
-    <header>
-        <i class="fas fa-bars" onclick="toggleNav()"></i>
-        <div class="brand">UseBy</div>
-    </header>
-    <nav id="nav" class="close-nav">
-        <ul>
-            <li class="selected" onclick="home()">
-                Home
-            </li>
-            <li onclick="myFridge()">
-                My Fridge
-            </li>
-            <li onclick="myRecipes()">
-                My Recipes
-            </li>
-            <li onclick="shoppingList()">
-                Shopping List
-            </li>
-            <li onclick="preferences()">
-                Preferences
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <div class="btn" id="btn-1" onclick="myFridge()">
-            <div class="outer">
-                <div class="inner">
-                    <div class="btn-icon">
-                        <img src="img/fridge.svg" alt="Fridge">
-                    </div>
-                    <div class="btn-text">My Fridge</div>
+    <div class="background" onclick="toHome()">
+        <div class="outer">
+            <div class="inner">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Logo">
+                </div>
+                <div class="title">
+                    UseBy
                 </div>
             </div>
         </div>
-        <div class="btn" id="btn-2" onclick="myRecipes()">
-            <div class="outer">
-                <div class="inner">
-                    <div class="btn-icon">
-                        <img src="img/book.svg" alt="Book">
-                    </div>
-                    <div class="btn-text">My Recipes</div>
-                </div>
-            </div>
-        </div>
-        <div class="btn" id="btn-3" onclick="shoppingList()">
-            <div class="outer">
-                <div class="inner">
-                    <div class="btn-icon">
-                        <img src="img/shopping-basket.svg" alt="Shopping Basket">
-                    </div>
-                    <div class="btn-text">Shopping List</div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </div>
 </body>
 
 </html>
