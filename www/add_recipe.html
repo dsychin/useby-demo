@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Use By</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script>
+        function myFridge() {
+            window.location = "my_fridge.html";
+        }
+
+        function home() {
+            window.location = "home.html";
+        }
+
+        function myRecipes() {
+            window.location = "my_recipes.html";
+        }
+
+        function shoppingList() {
+            window.location = "shopping_list.html";
+        }
+
+        function preferences() {
+            window.location = "preferences.html"
+        }
+
+        function toggleNav() {
+            if (document.getElementById("nav").classList.contains('close-nav')) {
+                document.getElementById("nav").classList.remove('close-nav');
+            } else {
+                document.getElementById("nav").classList.add('close-nav');
+            }
+        }
+    </script>
+    <style>
+        header {
+            font-size: 32px;
+            background-color: #ffb777;
+            color: rgb(46, 46, 46);
+            border-bottom: solid grey 1px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 99;
+        }
+
+        .brand {
+            text-align: center;
+            padding: 10px;
+        }
+
+        header svg {
+            margin: 14px 5px;
+            position: absolute;
+            right: 10px;
+        }
+
+        nav {
+            padding-top: 10px;
+            padding-bottom: 15px;
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            top: 61px;
+            z-index: 98;
+            border-bottom: solid grey 1px;
+            transition: top 0.5s;
+        }
+
+        .selected {
+            background-color: rgb(231, 231, 231);
+        }
+
+        .close-nav {
+            top: -210px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        main {
+            padding-top: 80px;
+            margin-bottom: 60px;
+        }
+
+        .outer {
+            display: table;
+            height: 100%;
+            width: 100%;
+        }
+
+        .inner {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        footer {
+            height: 60px;
+            border: black solid 1px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            background-color: white;
+        }
+
+        footer svg {
+            color: #29be49;
+        }
+
+        footer .content {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        footer .newItemText {
+            padding-left: 10px;
+        }
+
+        * {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            box-sizing: border-box;
+        }
+
+        form {
+            margin: 0 10px;
+        }
+
+        label,
+        input {
+            font-size: 18px !important;
+        }
+
+        .short-form {
+            width: 50px;
+            display: inline;
+        }
+
+        form span {
+            font-size: 18px;
+            padding-left: 5px;
+        }
+
+        .add-item {
+            border-bottom: black solid 1px;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+            font-weight: 600;
+        }
+
+        .top {
+            border-top: black solid 1px;
+        }
+
+        .wrapper {
+            border-bottom: black solid 1px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <i class="fas fa-bars" onclick="toggleNav()"></i>
+        <div class="brand">Add a Recipe</div>
+    </header>
+    <nav id="nav" class="close-nav">
+        <ul>
+            <li onclick="home()">
+                Home
+            </li>
+            <li onclick="myFridge()">
+                My Fridge
+            </li>
+            <li onclick="myRecipes()">
+                My Recipes
+            </li>
+            <li onclick="shoppingList()">
+                Shopping List
+            </li>
+            <li onclick="preferences()">
+                Preferences
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <form>
+            <div class="form-group">
+                <label>Recipe Name</label>
+                <input type="text" class="form-control">
+            </div>
+        </form>
+        <form class="form-inline">
+            <div class="form-group">
+                <label>Number of Servings</label>
+                <div>
+                    <input type="text" class="form-control short-form">
+                    <span>People</span>
+                </div>
+            </div>
+            <label class="title">Ingredients</label>
+        </form>
+        <div class="wrapper top">
+            <div class="item">
+                Minced Beef
+            </div>
+            <div class="qty">
+                500 G
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="item">
+                Chopped Onions
+            </div>
+            <div class="qty">
+                2
+            </div>
+        </div>
+        <div class="add-item">
+            Add New Item
+        </div>
+    </main>
+    <footer>
+        <div class="outer">
+            <div class="inner">
+                <div class="content">
+                    <i class="fas fa-plus-circle"></i>
+                    <span class="newItemText">Add Recipe</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</body>
+
+</html>

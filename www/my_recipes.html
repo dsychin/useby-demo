@@ -39,6 +39,10 @@
                 document.getElementById("nav").classList.add('close-nav');
             }
         }
+
+        function addRecipe() {
+            window.location = "add_recipe.html";
+        }
     </script>
     <style>
         header {
@@ -313,7 +317,7 @@
         </div>
     </main>
     <footer>
-        <div class="outer">
+        <div class="outer" onclick="addRecipe()">
             <div class="inner">
                 <div class="content">
                     <i class="fas fa-plus-circle"></i>
