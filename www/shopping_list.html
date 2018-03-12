@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Use By</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
     <script>
         function myFridge() {
             window.location = "my_fridge.html";
@@ -49,18 +50,18 @@
             top: 0;
             z-index: 99;
         }
-        
+
         .brand {
             text-align: center;
             padding: 10px;
         }
-        
+
         header svg {
             margin: 14px 5px;
             position: absolute;
             right: 10px;
         }
-        
+
         nav {
             padding-top: 10px;
             padding-bottom: 15px;
@@ -72,42 +73,42 @@
             border-bottom: solid grey 1px;
             transition: top 0.5s;
         }
-        
+
         .selected {
             background-color: rgb(231, 231, 231);
         }
-        
+
         .close-nav {
             top: -210px;
         }
-        
+
         ul {
             list-style-type: none;
             padding: 0;
         }
-        
+
         li {
             text-align: center;
             padding: 10px;
             font-size: 20px;
         }
-        
+
         main {
             padding-top: 60px;
             margin-bottom: 60px;
         }
-        
+
         .outer {
             display: table;
             height: 100%;
             width: 100%;
         }
-        
+
         .inner {
             display: table-cell;
             vertical-align: middle;
         }
-        
+
         footer {
             height: 60px;
             border: black solid 1px;
@@ -116,51 +117,68 @@
             bottom: 0;
             background-color: white;
         }
-        
+
         footer svg {
             color: #29be49;
         }
-        
+
         footer .content {
             text-align: center;
             font-size: 30px;
         }
-        
+
         footer .newItemText {
             padding-left: 10px;
         }
-        
+
         * {
             margin: 0;
             font-family: 'Quicksand', sans-serif;
             box-sizing: border-box;
         }
-        
+
         .item {
+            display: -ms-grid;
             display: grid;
+            -ms-grid-columns: 1fr 4fr 1fr;
             grid-template-columns: 1fr 4fr 1fr;
             align-items: center;
             padding: 5px 10px;
             border-bottom: solid black 1px;
         }
-        
+
+        .thumbnail {
+            -ms-grid-column: 1;
+            grid-column: 1;
+        }
+
+        .item-text {
+            -ms-grid-column: 2;
+            grid-column: 2;
+        }
+
+        .item-qty {
+            -ms-grid-column: 3;
+            grid-column: 3;
+        }
+
         img {
             width: 100%;
         }
-        
+
         .item-text,
         .item-qty {
             font-weight: 600;
             padding: 10px;
         }
-        
+
         #add-item {
             text-align: center;
             font-size: 20px;
             border-bottom: solid black 1px;
             padding: 5px;
         }
-        
+
         #add-item svg {
             color: #29be49;
         }
@@ -205,13 +223,35 @@
         </div>
         <div class="item">
             <div class="thumbnail">
-                <img src="img/cheese.jpg" alt="Cheese">
+                <img src="img/mushroom.jpg" alt="Mushroom">
             </div>
             <div class="item-text">
-                Tesco
+                Tesco Baby Button Mushrooms
             </div>
             <div class="item-qty">
-                550g
+                200g
+            </div>
+        </div>
+        <div class="item">
+            <div class="thumbnail">
+                <img src="img/semi-skim-milk.jpg" alt="Semi Skim Milk">
+            </div>
+            <div class="item-text">
+                Tesco British Semi Skimmed Milk
+            </div>
+            <div class="item-qty">
+                4 Pints
+            </div>
+        </div>
+        <div class="item">
+            <div class="thumbnail">
+                <img src="img/diced_chicken.jpg" alt="Diced Chicken">
+            </div>
+            <div class="item-text">
+                Tesco British Diced Chicken Breast
+            </div>
+            <div class="item-qty">
+                450g
             </div>
         </div>
         <div id="add-item">
